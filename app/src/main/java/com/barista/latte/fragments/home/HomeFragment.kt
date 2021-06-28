@@ -1,13 +1,11 @@
 package com.barista.latte.fragments.home
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.barista.latte.R
 import com.barista.latte.databinding.HomeFragmentBinding
@@ -30,5 +28,4 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container, false)
         return binding.root
     }
-
 }

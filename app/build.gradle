@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.barista.latte"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -32,7 +32,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
 }

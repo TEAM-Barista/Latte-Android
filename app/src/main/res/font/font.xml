@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font android:font = "@font/jet_brains_mono_eb"/>
+    <font android:font = "@font/jet_brains_mono_b"/>
+    <font android:font = "@font/noto_sans_kr_eb"/>
+    <font android:font = "@font/noto_sans_kr_b"/>
+    <font android:font = "@font/noto_sans_kr_m"/>
+    <font android:font = "@font/noto_sans_kr_r"/>
+    <font android:font = "@font/noto_sans_b"/>
+    <font android:font = "@font/noto_sans_r"/>
+</font-family>

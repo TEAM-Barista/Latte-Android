@@ -43,27 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun setCustomActionBar() {
         val actionBar = supportActionBar ?: return
 
-        actionBar.setDisplayShowCustomEnabled(true)
-        actionBar.setDisplayHomeAsUpEnabled(false)
-        actionBar.setDisplayShowTitleEnabled(false)
-
-        val actionBarView =
-            LayoutInflater.from(this)
-                .inflate(R.layout.custom_actionbar, null)
-        actionBar.customView = actionBarView
-
-        val parent : Toolbar = actionBarView.parent as Toolbar
-
-        parent.setContentInsetsAbsolute(0, 0)
-
-        val params = ActionBar.LayoutParams(
-            ActionBar.LayoutParams.MATCH_PARENT,
-            ActionBar.LayoutParams.MATCH_PARENT
-        )
-        actionBar.setCustomView(actionBarView, params)
-
-        // val actionBar = LatteActionBar(this, supportActionBar)
-        // actionBar.setActionBar()
+        LatteActionBar(this, actionBar).setActionBar()
     }
 
     private fun setFragment() {

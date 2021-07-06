@@ -2,9 +2,6 @@ package com.barista.latte.activities.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.barista.latte.R
@@ -14,7 +11,6 @@ import com.barista.latte.fragments.home.HomeFragment
 import com.barista.latte.fragments.interview.InterviewFragment
 import com.barista.latte.fragments.mypage.MyPageFragment
 import com.barista.latte.fragments.search.SearchFragment
-import com.barista.latte.views.LatteActionBar
 import com.google.android.material.tabs.TabLayout
 
 
@@ -35,15 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, com.barista.latte.R.layout.activity_main)
 
-        setCustomActionBar()
         setFragment()
         aboutView()
-    }
-
-    private fun setCustomActionBar() {
-        val actionBar = supportActionBar ?: return
-
-        LatteActionBar(this, actionBar).setActionBar()
     }
 
     private fun setFragment() {

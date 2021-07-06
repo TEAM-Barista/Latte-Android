@@ -9,11 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/DarkTheme">
+        android:theme="@style/DarkThemeNoActionBar">
         <activity android:name=".activities.code.CodeViewActivity" />
         <activity android:name=".activities.main.MainActivity" />
         <activity android:name=".activities.tutorial.TutorialActivity" />
-        <activity android:name=".activities.splash.SplashActivity" android:theme="@style/DarkThemeNoActionBar">
+        <activity android:name=".activities.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

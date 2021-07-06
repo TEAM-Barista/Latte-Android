@@ -7,6 +7,29 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="dark_gray_24">#242424</color>
-    <color name="dark_gray_55">#555555</color>
+
+    <color name="latte_yellow">#FFDB43</color>
+    <color name="latte_green">#6CFA94</color>
+    <color name="latte_pink">#F09DCD</color>
+    <color name="latte_lavender">FAC92FF</color>
+
+    <color name="dark">#171717</color>
+    <color name="dark_grey_24">#242424</color>
+    <color name="dark_grey_3d">#3D3D3D</color>
+    <color name="dark_grey_55">#555555</color>
+    <color name="grey_6f">#6F6F6F</color>
+    <color name="grey_8b">#8B8B8B</color>
+    <color name="light_grey_a5">#A5A5A5</color>
+    <color name="light_grey_c1">#C1C1C1</color>
+    <color name="light_grey_df">#DFDFDF</color>
+    <color name="light_grey_f2">#F2F2f2</color>
+    <color name="light_grey_fb">#FBFBFB</color>
+    <color name="light">#FFFFFF</color>
+
+    <color name="latte_red">#E83340</color>
+    <color name="latte_orange">#EC5D4C</color>
+    <color name="latte_blue">#182AE5</color>
+    <color name="latte_sky">#4CD9FF</color>
+    <color name="latte_purple">#6255F1</color>
+    <color name="latte_h_pink">#FF44B4</color>
 </resources>

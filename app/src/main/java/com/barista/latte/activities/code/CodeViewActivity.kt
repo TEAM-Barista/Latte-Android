@@ -7,6 +7,6 @@ import com.barista.latte.R
 class CodeViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_code_viewe)
+        setContentView(R.layout.activity_code_view)
     }
 }

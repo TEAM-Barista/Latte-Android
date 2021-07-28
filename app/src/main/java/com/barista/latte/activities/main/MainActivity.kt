@@ -20,16 +20,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    val interviewFragment by lazy { InterviewFragment.newInstance() }
-    val searchFragment by lazy { SearchFragment.newInstance() }
     val homeFragment by lazy { HomeFragment.newInstance() }
+    val interviewFragment by lazy { InterviewFragment.newInstance() }
     val boardFragment by lazy { BoardFragment.newInstance() }
+    val searchFragment by lazy { SearchFragment.newInstance() }
     val myPageFragment by lazy { MyPageFragment.newInstance() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, com.barista.latte.R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setFragment()
         aboutView()
@@ -48,14 +48,20 @@ class MainActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab ?: return
                 val selectedFragment = when (tab.position) {
-                    1 -> {
-                        interviewFragment
-                    }
                     0 -> {
                         homeFragment
                     }
+                    1 -> {
+                        interviewFragment
+                    }
                     2 -> {
                         boardFragment
+                    }
+                    3 -> {
+                        searchFragment
+                    }
+                    4 -> {
+                        myPageFragment
                     }
                     else -> {
                         return

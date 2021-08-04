@@ -16,7 +16,7 @@
         android:background="?attr/bgColor"
         tools:context=".home.view.HomeFragment">
 
-        <com.barista.latte.views.LatteBasicActionBar
+        <com.barista.latte.views.LatteHomeActionBar
             android:id="@+id/action_bar"
             android:layout_width="match_parent"
             android:layout_height="56dp"

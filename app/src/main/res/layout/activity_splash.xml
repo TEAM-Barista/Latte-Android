@@ -8,28 +8,29 @@
     tools:context=".activities.splash.SplashActivity">
 
     <ImageView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/logo_imageView"
-        app:layout_constraintBottom_toTopOf="@id/logo_textView"
         android:layout_width="wrap_content"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/green_logo"
+        app:layout_constraintBottom_toTopOf="@id/logo_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/logo_textView"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo_imageView"
-        android:text="@string/app_name"
-        android:textSize="24dp"
-        android:textColor="?attr/textColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/jet_brains_mono_eb" />
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/jet_brains_mono_eb"
+        android:text="@string/app_name"
+        android:textColor="?attr/textColor"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@ class HomeViewModel : ViewModel() {
 
         val postList = ArrayList<Post>()
         for (i in 0 until 5) {
-            postList.add(Post("제목", "내용", "Minky", 1000, 1000, null))
+            postList.add(Post("Headline-1line", "Our public platform serves 100 million people every month, making it one of the 50 most ", "Minky", 1000, 1000, null))
         }
         _postList.value = postList
     }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.barista.latte.models.Interview
 import com.barista.latte.models.Post
+import com.barista.latte.viewmodels.InterviewViewModel
 import timber.log.Timber
 
 class HomeViewModel : ViewModel() {
@@ -20,6 +21,16 @@ class HomeViewModel : ViewModel() {
         get() {
             return _postList
         }
+
+    fun loadData() {
+        _currentWeekInterview.value = Interview("3rd-year developer", "Our public platform servers 100 million people every month, making it one of the 50 most popular websites")
+
+        val postList = ArrayList<Post>()
+        for (i in 0 until 5) {
+            postList.add(Post("제목", "내용", "Minky", 1000, 1000, null))
+        }
+        _postList.value = postList
+    }
 
     fun requestInterviewAction() {
         Timber.d("#juhyang requestInterviewAction")

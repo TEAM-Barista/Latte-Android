@@ -14,6 +14,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
  */
 object ImageUtil {
 
+    @JvmStatic
     @BindingAdapter("imageFromUrl")
     fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
         if (!imageUrl.isNullOrEmpty()) {

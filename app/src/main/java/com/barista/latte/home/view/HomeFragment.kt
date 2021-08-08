@@ -4,14 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.barista.latte.R
+import com.barista.latte.activities.main.MainActivity
 import com.barista.latte.common.PostAdapter
+import com.barista.latte.databinding.HomeActionbarBinding
 import com.barista.latte.databinding.HomeFragmentBinding
 import com.barista.latte.home.viewmodels.HomeViewModel
+import android.widget.LinearLayout
+
+
+
 
 class HomeFragment : Fragment() {
 
@@ -30,10 +37,44 @@ class HomeFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container, false)
 
+        binding.homeViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
         initRecyclerview()
         setDataObserver()
+        loadData()
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        setActionBar()
+    }
+
+    private fun setActionBar() {
+        val activity = activity ?: return
+        var actionBar : ActionBar? = null
+        if (activity is MainActivity) {
+            actionBar = activity.supportActionBar
+        }
+
+        if (actionBar == null) { return }
+
+        actionBar.setDisplayShowCustomEnabled(true)
+        actionBar.setDisplayHomeAsUpEnabled(false)
+        actionBar.setDisplayShowTitleEnabled(false)
+
+        val actionBarBinding = HomeActionbarBinding.inflate(LayoutInflater.from(context))
+
+        val params = ActionBar.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+
+        actionBar.setCustomView(actionBarBinding.root, params)
+    }
+
+    private fun loadData() {
+        viewModel.loadData()
     }
 
     private fun initRecyclerview() {

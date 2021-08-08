@@ -6,7 +6,7 @@ package com.barista.latte.models
 
  */
 data class Post(val title : String, val contents : String, val writer : String, var bookmarkCount : Int, var commentCount : Int, var imageUrl : String?) {
-    fun getBookmarkCount() : String {
+    fun getBookmarkCountString() : String {
         return if (bookmarkCount > 999) {
             "999+"
         } else {
@@ -14,11 +14,15 @@ data class Post(val title : String, val contents : String, val writer : String, 
         }
     }
 
-    fun getCommentCount() : String {
+    fun getCommentCountString() : String {
         return if (commentCount > 999) {
             "999+"
         } else {
             commentCount.toString()
         }
+    }
+
+    fun getImageUrlString() : String {
+        return imageUrl ?: ""
     }
 }

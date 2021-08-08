@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@{post.getBookmarkCount()}"
+                android:text="@{post.getBookmarkCountString()}"
                 android:textColor="@color/light_grey_c1"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="@id/post_bookmark_image"
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@{post.getCommentCount()}"
+                android:text="@{post.getCommentCountString()}"
                 android:textColor="@color/light_grey_c1"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="@id/post_comment_image"
@@ -108,10 +108,11 @@
                 android:layout_height="80dp"
                 android:background="@drawable/round_square_8dp"
                 android:backgroundTint="@color/black"
-                app:imageFromUrl="@{post.imageUrl}"
+                app:imageFromUrl="@{post.getImageUrlString()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
             <ImageView
                 android:id="@+id/post_sub_image"

@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.barista.latte.databinding.LatteBackActionbarBinding
-import com.barista.latte.databinding.LatteBasicActionbarBinding
 import com.barista.latte.utils.ImageUtil
 
 /**

@@ -5,8 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27685185185185185" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.27685185185185185" />
+        <entry key="app/src/main/res/layout/home_actionbar.xml" value="0.18642350557244175" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/item_post.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_post.xml" value="0.1206349503237821" />
+        <entry key="app/src/main/res/layout/latte_back_actionbar.xml" value="0.41041666666666665" />
         <entry key="app/src/main/res/layout/latte_basic_actionbar.xml" value="0.2558257345491388" />
         <entry key="app/src/main/res/layout/latte_home_actionbar.xml" value="0.33" />
         <entry key="app/src/main/res/layout/tab_item_layout.xml" value="0.16945288753799392" />

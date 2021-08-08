@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.barista.latte.R
-import com.barista.latte.databinding.BoardFragmentBinding
 import com.barista.latte.databinding.SearchFragmentBinding
 import com.barista.latte.viewmodels.SearchViewModel
 
@@ -24,7 +23,7 @@ class SearchFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.search_fragment, container, false)
         return binding.root
     }

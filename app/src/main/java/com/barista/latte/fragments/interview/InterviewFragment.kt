@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.barista.latte.R
-import com.barista.latte.databinding.BoardFragmentBinding
 import com.barista.latte.databinding.InterviewFragmentBinding
 import com.barista.latte.viewmodels.InterviewViewModel
 

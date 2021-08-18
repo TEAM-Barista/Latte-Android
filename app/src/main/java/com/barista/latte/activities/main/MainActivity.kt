@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.barista.latte.R
 import com.barista.latte.databinding.ActivityMainBinding
-import com.barista.latte.post.view.PostFragment
+import com.barista.latte.post.list.view.PostFragment
 import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.fragments.interview.InterviewFragment
 import com.barista.latte.fragments.mypage.MyPageFragment

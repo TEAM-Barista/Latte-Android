@@ -1,4 +1,4 @@
-package com.barista.latte.post.view
+package com.barista.latte.post.list.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import com.barista.latte.activities.main.MainActivity
 import com.barista.latte.common.PostAdapter
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostFragmentBinding
-import com.barista.latte.post.viewmodels.PostViewModel
+import com.barista.latte.post.list.viewmodels.PostViewModel
 import com.barista.latte.views.BaseFragment
 
 class PostFragment : BaseFragment() {

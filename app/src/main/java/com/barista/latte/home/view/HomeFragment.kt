@@ -1,5 +1,6 @@
 package com.barista.latte.home.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,8 +17,7 @@ import com.barista.latte.databinding.HomeActionbarBinding
 import com.barista.latte.databinding.HomeFragmentBinding
 import com.barista.latte.home.viewmodels.HomeViewModel
 import android.widget.LinearLayout
-
-
+import com.barista.latte.post.detail.view.PostDetailActivity
 
 
 class HomeFragment : Fragment() {
@@ -78,7 +78,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerview() {
-        postAdapter = PostAdapter {  }
+        postAdapter = PostAdapter { post ->
+            val intent = Intent(requireContext(), PostDetailActivity::class.java)
+            intent.putExtra(PostDetailActivity.POST_KEY, post)
+            requireActivity().startActivity(intent)
+        }
         val layoutManager = LinearLayoutManager(requireContext())
         binding.postRecyclerView.adapter = postAdapter
         binding.postRecyclerView.layoutManager = layoutManager

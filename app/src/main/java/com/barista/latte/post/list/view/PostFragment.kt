@@ -1,5 +1,6 @@
 package com.barista.latte.post.list.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.barista.latte.activities.main.MainActivity
 import com.barista.latte.common.PostAdapter
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostFragmentBinding
+import com.barista.latte.post.detail.view.PostDetailActivity
 import com.barista.latte.post.list.viewmodels.PostViewModel
 import com.barista.latte.views.BaseFragment
 
@@ -72,7 +74,11 @@ class PostFragment : BaseFragment() {
     }
 
     private fun initRecyclerview() {
-        postAdapter = PostAdapter {  }
+        postAdapter = PostAdapter { post ->
+            val intent = Intent(requireContext(), PostDetailActivity::class.java)
+            intent.putExtra(PostDetailActivity.POST_KEY, post)
+            requireActivity().startActivity(intent)
+        }
         val layoutManager = LinearLayoutManager(requireContext())
         binding.postRecyclerView.adapter = postAdapter
         binding.postRecyclerView.layoutManager = layoutManager

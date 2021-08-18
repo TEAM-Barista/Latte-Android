@@ -14,7 +14,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionbar_height">
+        android:layout_height="@dimen/actionbar_height"
+        android:background="@color/dark_grey_24">
 
         <ImageView
             android:id="@+id/back_button"
@@ -31,6 +32,7 @@
             android:id="@+id/bookmark_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
             android:padding="4dp"
             android:src="@drawable/bookmark_off"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,11 +43,20 @@
             android:id="@+id/like_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
             android:padding="4dp"
             android:src="@drawable/like_off"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dark_grey_55"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

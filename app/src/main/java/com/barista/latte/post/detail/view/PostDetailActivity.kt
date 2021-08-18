@@ -14,6 +14,10 @@ import com.barista.latte.views.BaseActivity
 
 class PostDetailActivity : BaseActivity() {
 
+    companion object {
+        const val POST_KEY = "post"
+    }
+
     lateinit var binding : ActivityPostDetailBinding
     private val viewModel : PostDetailViewModel by viewModels()
 
@@ -21,6 +25,7 @@ class PostDetailActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_post_detail)
+        binding.viewModel = viewModel
     }
 
     override fun setActionBar() {

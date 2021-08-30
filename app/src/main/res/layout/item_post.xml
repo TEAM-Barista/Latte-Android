@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.barista.latte.models.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/post_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jet_brains_mono_eb"
+                android:text="@{post.title}"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/post_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Headline-1line" />
+
+            <TextView
+                android:id="@+id/post_contents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_r"
+                android:maxLines="2"
+                android:text="@{post.contents}"
+                android:textColor="@color/light_grey_fb"
+                android:textSize="11sp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@id/post_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/post_title"
+                tools:text="Our public platform serves 100million people every month, making it one of the 50 most" />
+
+            <TextView
+                android:id="@+id/post_writer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{post.writer}"
+                android:textColor="@color/grey_6f"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/post_contents"
+                tools:text="Silverash" />
+
+            <ImageView
+                android:id="@+id/post_bookmark_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="@id/post_writer"
+                app:layout_constraintStart_toEndOf="@id/post_writer" />
+
+            <TextView
+                android:id="@+id/post_bookmark_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{post.getBookmarkCountString()}"
+                android:textColor="@color/light_grey_c1"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/post_bookmark_image"
+                app:layout_constraintStart_toEndOf="@id/post_bookmark_image"
+                tools:text="999+" />
+
+            <ImageView
+                android:id="@+id/post_comment_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="@id/post_bookmark_count"
+                app:layout_constraintStart_toEndOf="@id/post_bookmark_count" />
+
+            <TextView
+                android:id="@+id/post_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{post.getCommentCountString()}"
+                android:textColor="@color/light_grey_c1"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/post_comment_image"
+                app:layout_constraintStart_toEndOf="@id/post_comment_image"
+                tools:text="999+" />
+
+            <ImageView
+                android:id="@+id/post_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/round_square_8dp"
+                android:backgroundTint="@color/black"
+                app:imageFromUrl="@{post.getImageUrlString()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/post_sub_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/post_image"
+                app:layout_constraintTop_toTopOf="@id/post_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey_c1"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

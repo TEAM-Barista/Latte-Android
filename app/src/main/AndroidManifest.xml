@@ -13,7 +13,9 @@
         <activity android:name=".activities.code.CodeViewActivity" />
         <activity android:name=".activities.main.MainActivity" />
         <activity android:name=".activities.tutorial.TutorialActivity" />
-        <activity android:name=".activities.splash.SplashActivity" android:theme="@style/DarkThemeNoActionBar">
+        <activity
+            android:name=".activities.splash.SplashActivity"
+            android:theme="@style/DarkThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

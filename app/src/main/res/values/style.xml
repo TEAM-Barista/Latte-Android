@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="noto_sans_tab" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/noto_sans_kr_r</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
+</resources>

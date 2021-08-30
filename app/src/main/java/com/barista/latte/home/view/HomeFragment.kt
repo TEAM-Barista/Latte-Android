@@ -22,8 +22,10 @@ import android.widget.LinearLayout
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: HomeFragmentBinding
-    private lateinit var postAdapter : PostAdapter
+    private var _binding: HomeFragmentBinding? = null
+
+    private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
+    private val postAdapter : PostAdapter by lazy { PostAdapter {} }
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -35,7 +37,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container, false)
+        _binding = HomeFragmentBinding.inflate(inflater, container, false)
 
         binding.homeViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -51,6 +53,12 @@ class HomeFragment : Fragment() {
         super.onResume()
 
         setActionBar()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 
     private fun setActionBar() {
@@ -78,15 +86,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerview() {
-        postAdapter = PostAdapter {  }
-        val layoutManager = LinearLayoutManager(requireContext())
-        binding.postRecyclerView.adapter = postAdapter
-        binding.postRecyclerView.layoutManager = layoutManager
+        binding.postRecyclerView.apply {
+            adapter = postAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
     }
 
     private fun setDataObserver() {
         viewModel.postList.observe(viewLifecycleOwner) { postList ->
-            postAdapter.setPostList(postList)
+            postAdapter.submitList(postList)
         }
     }
 }

@@ -19,8 +19,12 @@ import com.barista.latte.views.BaseFragment
 
 class PostFragment : BaseFragment() {
 
-    private lateinit var binding: PostFragmentBinding
-    private lateinit var postAdapter : PostAdapter
+    private var _binding: PostFragmentBinding? = null // View 의
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
+    private val postAdapter: PostAdapter by lazy { PostAdapter {} }
 
     companion object {
         fun newInstance() = PostFragment()
@@ -29,10 +33,10 @@ class PostFragment : BaseFragment() {
     private val viewModel: PostViewModel by viewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.post_fragment, container, false)
+        _binding = PostFragmentBinding.inflate(inflater, container, false)
 
         initRecyclerview()
         setDataObserver()
@@ -40,14 +44,22 @@ class PostFragment : BaseFragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
+    }
+
     override fun setActionBar() {
         val activity = activity ?: return
-        var actionBar : ActionBar? = null
+        var actionBar: ActionBar? = null
         if (activity is MainActivity) {
             actionBar = activity.supportActionBar
         }
 
-        if (actionBar == null) { return }
+        if (actionBar == null) {
+            return
+        }
 
         actionBar.setDisplayShowCustomEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(false)
@@ -67,14 +79,14 @@ class PostFragment : BaseFragment() {
 
     private fun setDataObserver() {
         viewModel.postList.observe(viewLifecycleOwner) { postList ->
-            postAdapter.setPostList(postList)
+            postAdapter.submitList(postList)
         }
     }
 
     private fun initRecyclerview() {
-        postAdapter = PostAdapter {  }
-        val layoutManager = LinearLayoutManager(requireContext())
-        binding.postRecyclerView.adapter = postAdapter
-        binding.postRecyclerView.layoutManager = layoutManager
+        binding.postRecyclerView.apply {
+            adapter = postAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
     }
 }

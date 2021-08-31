@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/latte_back_actionbar.xml" value="0.41041666666666665" />
         <entry key="app/src/main/res/layout/latte_basic_actionbar.xml" value="0.2558257345491388" />
         <entry key="app/src/main/res/layout/latte_home_actionbar.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/my_page_fragment.xml" value="0.3695652173913043" />
         <entry key="app/src/main/res/layout/post_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/tab_item_layout.xml" value="0.16945288753799392" />
         <entry key="app/src/main/res/layout/text_actionbar.xml" value="0.2801418439716312" />
@@ -20,7 +21,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

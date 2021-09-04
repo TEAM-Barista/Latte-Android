@@ -39,6 +39,7 @@
                 android:id="@+id/edit_profile_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:imageFromUrl="@{viewModel.user.avatarImageUrl}"
                 app:layout_constraintBottom_toBottomOf="@id/profile_imageView"
                 app:layout_constraintEnd_toEndOf="@id/profile_imageView" />
 
@@ -57,14 +58,17 @@
                     android:id="@+id/name_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{viewModel.user.name}"
                     android:textColor="@color/white"
                     android:textSize="20sp"
+
                     tools:text="Juhyang" />
 
                 <TextView
                     android:id="@+id/email_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{viewModel.user.email}"
                     android:textColor="@color/grey_8b"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -99,14 +103,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/new_notification"
                     android:textColor="@color/light_grey_a5"
-                    android:textSize="12sp"
-                    tools:text="새 알림" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jet_brains_mono_eb"
+                    android:text="@{viewModel.notificationCount.toString()}"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     tools:text="999" />
@@ -130,6 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/bookmark"
                     android:textColor="@color/light_grey_a5"
                     android:textSize="12sp"
                     tools:text="북마크" />
@@ -138,6 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jet_brains_mono_eb"
+                    android:text="@{viewModel.bookmarkCount.toString()}"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     tools:text="999" />
@@ -161,6 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/bookmark"
                     android:textColor="@color/light_grey_a5"
                     android:textSize="12sp"
                     tools:text="나의 질문" />
@@ -169,6 +177,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jet_brains_mono_eb"
+                    android:text="@{viewModel.questionCount.toString()}"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     tools:text="999" />
@@ -192,6 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/my_answer"
                     android:textColor="@color/light_grey_a5"
                     android:textSize="12sp"
                     tools:text="나의 답변" />
@@ -200,6 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jet_brains_mono_eb"
+                    android:text="@{viewModel.answerCount.toString()}"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     tools:text="999" />
@@ -228,6 +239,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/my_account"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     tools:text="내 계정" />
@@ -255,6 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/notice"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     tools:text="공지사항" />
@@ -282,6 +295,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@string/app_inform"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     tools:text="앱 정보" />

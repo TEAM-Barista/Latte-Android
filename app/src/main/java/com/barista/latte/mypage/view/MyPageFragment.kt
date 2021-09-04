@@ -27,6 +27,9 @@ class MyPageFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = MyPageFragmentBinding.inflate(inflater, container, false)
+
+        binding.viewModel = viewModel
+
         return binding.root
     }
 

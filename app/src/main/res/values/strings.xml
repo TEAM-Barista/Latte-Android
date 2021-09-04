@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Latte</string>
+
+    <string name="new_notification">새 알림</string>
+    <string name="bookmark">북 마크</string>
+    <string name="my_question">나의 질문</string>
+    <string name="my_answer">나의 답변</string>
+
+    <string name="my_account">내 계정</string>
+    <string name="notice">공지사항</string>
+    <string name="app_inform">앱 정보</string>
 </resources>

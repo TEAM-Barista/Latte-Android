@@ -22,7 +22,7 @@ class HomeViewModel : ViewModel() {
         }
 
     fun loadData() {
-        _currentWeekInterview.value = Interview("3rd-year developer", "Our public platform servers 100 million people every month, making it one of the 50 most popular websites")
+        _currentWeekInterview.value = Interview(1, "3rd-year developer", "Our public platform servers 100 million people every month, making it one of the 50 most popular websites")
 
         val postList = ArrayList<Post>()
         for (i in 0 until 5) {

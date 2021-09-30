@@ -5,19 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBar
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.barista.latte.R
-import com.barista.latte.activities.main.MainActivity
 import com.barista.latte.common.PostAdapter
-import com.barista.latte.databinding.HomeActionbarBinding
 import com.barista.latte.databinding.HomeFragmentBinding
 import com.barista.latte.home.viewmodels.HomeViewModel
 import android.widget.LinearLayout
-
-
+import androidx.appcompat.app.AppCompatActivity
+import com.barista.latte.databinding.LogoActionbarBinding
 
 
 class HomeFragment : Fragment() {
@@ -62,19 +58,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun setActionBar() {
-        val activity = activity ?: return
-        var actionBar : ActionBar? = null
-        if (activity is MainActivity) {
-            actionBar = activity.supportActionBar
-        }
-
-        if (actionBar == null) { return }
+        val actionBar = (requireActivity() as AppCompatActivity).supportActionBar ?: return
 
         actionBar.setDisplayShowCustomEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(false)
         actionBar.setDisplayShowTitleEnabled(false)
 
-        val actionBarBinding = HomeActionbarBinding.inflate(LayoutInflater.from(context))
+        val actionBarBinding = LogoActionbarBinding.inflate(LayoutInflater.from(context))
 
         val params = ActionBar.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
 

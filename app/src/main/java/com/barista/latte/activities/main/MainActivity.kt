@@ -8,7 +8,7 @@ import com.barista.latte.R
 import com.barista.latte.databinding.ActivityMainBinding
 import com.barista.latte.post.view.PostFragment
 import com.barista.latte.home.view.HomeFragment
-import com.barista.latte.fragments.interview.InterviewFragment
+import com.barista.latte.interview.view.InterviewFragment
 import com.barista.latte.mypage.view.MyPageFragment
 import com.barista.latte.fragments.search.SearchFragment
 import com.barista.latte.views.MainCustomTabItem

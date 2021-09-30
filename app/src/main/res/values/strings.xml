@@ -9,4 +9,7 @@
     <string name="my_account">내 계정</string>
     <string name="notice">공지사항</string>
     <string name="app_inform">앱 정보</string>
+
+    <string name="new_interview">새로운 인터뷰 !</string>
+    <string name="prior_interview">지난 인터뷰 살펴보기</string>
 </resources>

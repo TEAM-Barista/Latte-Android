@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/round_square_10dp"
+        android:backgroundTint="@color/latte_h_pink"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_r"
+            android:text="Eyeborow"
+            android:textColor="?attr/textColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/noto_sans_b"
+            android:text="Headline-1line"
+            android:textColor="?attr/textColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sub_title" />
+
+        <LinearLayout
+            android:layout_marginEnd="40dp"
+            android:id="@+id/hash_tag_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <TextView
+                android:id="@+id/hash_tag_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_square_8dp"
+                android:backgroundTint="#7F171717"
+                android:fontFamily="@font/noto_sans_r"
+                android:padding="8dp"
+                android:text="#HashTag"
+                android:textColor="?attr/textColor" />
+
+            <TextView
+                android:id="@+id/hash_tag_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/round_square_8dp"
+                android:backgroundTint="#7F171717"
+                android:fontFamily="@font/noto_sans_r"
+                android:padding="8dp"
+                android:text="#HashTag"
+                android:textColor="?attr/textColor" />
+
+            <TextView
+                android:id="@+id/hash_tag_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/round_square_8dp"
+                android:backgroundTint="#7F171717"
+                android:fontFamily="@font/noto_sans_r"
+                android:padding="8dp"
+                android:text="#HashTag"
+                android:textColor="?attr/textColor" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/like_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hash_tag_layout">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="999+"
+                android:textColor="?attr/textColor" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/bookmark_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/like_layout"
+            app:layout_constraintTop_toBottomOf="@id/hash_tag_layout">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="999+"
+                android:textColor="?attr/textColor" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

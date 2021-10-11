@@ -10,8 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/DarkTheme">
+        <activity
+            android:name=".post.detail.PostDetailActivity"
+            android:exported="true" />
         <activity android:name=".activities.code.CodeViewActivity" />
-        <activity android:name=".activities.main.MainActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".activities.tutorial.TutorialActivity" />
         <activity
             android:name=".activities.splash.SplashActivity"

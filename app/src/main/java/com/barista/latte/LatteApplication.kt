@@ -1,6 +1,7 @@
 package com.barista.latte
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 /**
@@ -8,6 +9,8 @@ import timber.log.Timber
  * Created by juhyang on 2021/06/26.
 
  */
+
+@HiltAndroidApp
 class LatteApplication : Application() {
     override fun onCreate() {
         super.onCreate()

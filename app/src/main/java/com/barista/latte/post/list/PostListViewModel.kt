@@ -1,11 +1,11 @@
-package com.barista.latte.post.viewmodels
+package com.barista.latte.post.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.barista.latte.models.Post
 
-class PostViewModel : ViewModel() {
+class PostListViewModel : ViewModel() {
 
     private val _postList : MutableLiveData<List<Post>> = MutableLiveData()
     val postList : LiveData<List<Post>>

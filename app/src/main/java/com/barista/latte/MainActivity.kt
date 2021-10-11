@@ -1,12 +1,11 @@
-package com.barista.latte.activities.main
+package com.barista.latte
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.barista.latte.R
 import com.barista.latte.databinding.ActivityMainBinding
-import com.barista.latte.post.view.PostFragment
+import com.barista.latte.post.list.PostListFragment
 import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.interview.view.InterviewFragment
 import com.barista.latte.mypage.view.MyPageFragment
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     val homeFragment by lazy { HomeFragment.newInstance() }
     val interviewFragment by lazy { InterviewFragment.newInstance() }
-    val boardFragment by lazy { PostFragment.newInstance() }
+    val boardFragment by lazy { PostListFragment.newInstance() }
     val searchFragment by lazy { SearchFragment.newInstance() }
     val myPageFragment by lazy { MyPageFragment.newInstance() }
 

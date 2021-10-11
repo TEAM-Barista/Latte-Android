@@ -8,20 +8,21 @@ import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.barista.latte.common.PostAdapter
+import com.barista.latte.post.list.PostListAdapter
 import com.barista.latte.databinding.HomeFragmentBinding
 import com.barista.latte.home.viewmodels.HomeViewModel
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.barista.latte.databinding.LogoActionbarBinding
+import com.barista.latte.views.BaseFragment
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     private var _binding: HomeFragmentBinding? = null
 
     private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
-    private val postAdapter : PostAdapter by lazy { PostAdapter {} }
+    private val postListAdapter : PostListAdapter by lazy { PostListAdapter {} }
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -40,15 +41,8 @@ class HomeFragment : Fragment() {
 
         initRecyclerview()
         setDataObserver()
-        loadData()
 
         return binding.root
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        setActionBar()
     }
 
     override fun onDestroyView() {
@@ -57,7 +51,7 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    private fun setActionBar() {
+    override fun setActionBar() {
         val actionBar = (requireActivity() as AppCompatActivity).supportActionBar ?: return
 
         actionBar.setDisplayShowCustomEnabled(true)
@@ -71,20 +65,20 @@ class HomeFragment : Fragment() {
         actionBar.setCustomView(actionBarBinding.root, params)
     }
 
-    private fun loadData() {
+    override fun loadData() {
         viewModel.loadData()
     }
 
     private fun initRecyclerview() {
         binding.postRecyclerView.apply {
-            adapter = postAdapter
+            adapter = postListAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
     }
 
     private fun setDataObserver() {
         viewModel.postList.observe(viewLifecycleOwner) { postList ->
-            postAdapter.submitList(postList)
+            postListAdapter.submitList(postList)
         }
     }
 }

@@ -1,42 +1,44 @@
-package com.barista.latte.post.view
+package com.barista.latte.post.list
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBar
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.barista.latte.R
-import com.barista.latte.activities.main.MainActivity
-import com.barista.latte.common.PostAdapter
+import com.barista.latte.MainActivity
 import com.barista.latte.databinding.CommonTextActionbarBinding
-import com.barista.latte.databinding.PostFragmentBinding
-import com.barista.latte.post.viewmodels.PostViewModel
+import com.barista.latte.databinding.PostListFragmentBinding
+import com.barista.latte.post.detail.PostDetailActivity
 import com.barista.latte.views.BaseFragment
 
-class PostFragment : BaseFragment() {
+class PostListFragment : BaseFragment() {
 
-    private var _binding: PostFragmentBinding? = null // View 의
+    private var _binding: PostListFragmentBinding? = null // View 의
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
-    private val postAdapter: PostAdapter by lazy { PostAdapter {} }
+    private val postListAdapter: PostListAdapter by lazy { PostListAdapter { post ->
+        val intent = Intent (requireContext(), PostDetailActivity::class.java)
+        intent.putExtra(PostDetailActivity.POST_KEY, post.id)
+        requireActivity().startActivity(intent)
+    } }
 
     companion object {
-        fun newInstance() = PostFragment()
+        fun newInstance() = PostListFragment()
     }
 
-    private val viewModel: PostViewModel by viewModels()
+    private val listViewModel: PostListViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        _binding = PostFragmentBinding.inflate(inflater, container, false)
+        _binding = PostListFragmentBinding.inflate(inflater, container, false)
 
         initRecyclerview()
         setDataObserver()
@@ -74,18 +76,18 @@ class PostFragment : BaseFragment() {
     }
 
     override fun loadData() {
-        viewModel.loadData()
+        listViewModel.loadData()
     }
 
     private fun setDataObserver() {
-        viewModel.postList.observe(viewLifecycleOwner) { postList ->
-            postAdapter.submitList(postList)
+        listViewModel.postList.observe(viewLifecycleOwner) { postList ->
+            postListAdapter.submitList(postList)
         }
     }
 
     private fun initRecyclerview() {
         binding.postRecyclerView.apply {
-            adapter = postAdapter
+            adapter = postListAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
     }

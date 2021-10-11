@@ -1,4 +1,4 @@
-package com.barista.latte.common
+package com.barista.latte.post.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -13,9 +13,9 @@ import com.barista.latte.models.Post
  * Created by juhyang on 2021/08/01.
 
  */
-class PostAdapter(val onViewClick: (post: Post) -> Unit) : ListAdapter<Post, PostAdapter.ViewHolder>(PostDiffCallback) {
+class PostListAdapter(val onViewClick: (post: Post) -> Unit) : ListAdapter<Post, PostListAdapter.ViewHolder>(PostDiffCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
 
         val binding = ItemPostBinding.inflate(layoutInflater, parent, false)

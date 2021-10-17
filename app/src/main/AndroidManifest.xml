@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/DarkTheme">
         <activity
+            android:name=".auth.signin.view.SignInActivity"
+            android:theme="@style/DarkThemeNoActionBar"
+            android:exported="false" />
+        <activity
             android:name=".post.detail.view.PostDetailActivity"
             android:exported="true" />
         <activity android:name=".activities.code.CodeViewActivity" />

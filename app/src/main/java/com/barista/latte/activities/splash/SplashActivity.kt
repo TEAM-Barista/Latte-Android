@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.barista.latte.R
 import com.barista.latte.MainActivity
+import com.barista.latte.auth.signin.view.SignInActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper())
             .postDelayed({
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, SignInActivity::class.java))
                 finish()
             }, 3000)
     }

@@ -1,4 +1,4 @@
-package com.barista.latte.post.list
+package com.barista.latte.post.list.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

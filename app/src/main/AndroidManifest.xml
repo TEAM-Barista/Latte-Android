@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/DarkTheme">
         <activity
-            android:name=".post.detail.PostDetailActivity"
+            android:name=".post.detail.view.PostDetailActivity"
             android:exported="true" />
         <activity android:name=".activities.code.CodeViewActivity" />
         <activity android:name=".MainActivity" />

@@ -1,14 +1,13 @@
-package com.barista.latte.post.detail
+package com.barista.latte.post.detail.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
-import com.barista.latte.R
 import com.barista.latte.databinding.ActivityPostDetailBinding
-import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostDetailActionbarBinding
+import com.barista.latte.post.detail.viewmodels.PostDetailViewModel
 import com.barista.latte.views.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 

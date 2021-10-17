@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.barista.latte.post.detail.PostDetailViewModel" />
+            type="com.barista.latte.post.detail.viewmodels.PostDetailViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/bgColor"
-        tools:context=".post.detail.PostDetailActivity">
+        tools:context=".post.detail.view.PostDetailActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

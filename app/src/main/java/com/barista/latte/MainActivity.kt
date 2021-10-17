@@ -5,15 +5,17 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.barista.latte.databinding.ActivityMainBinding
-import com.barista.latte.post.list.PostListFragment
+import com.barista.latte.post.list.view.PostListFragment
 import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.interview.view.InterviewFragment
 import com.barista.latte.mypage.view.MyPageFragment
-import com.barista.latte.fragments.search.SearchFragment
+import com.barista.latte.search.view.SearchFragment
 import com.barista.latte.views.MainCustomTabItem
 import com.google.android.material.tabs.TabLayout
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

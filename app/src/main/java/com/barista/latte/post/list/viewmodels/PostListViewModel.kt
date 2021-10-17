@@ -1,4 +1,4 @@
-package com.barista.latte.post.list
+package com.barista.latte.post.list.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.barista.latte.post.list
+package com.barista.latte.post.list.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.barista.latte.MainActivity
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostListFragmentBinding
-import com.barista.latte.post.detail.PostDetailActivity
+import com.barista.latte.post.detail.view.PostDetailActivity
+import com.barista.latte.post.list.viewmodels.PostListViewModel
 import com.barista.latte.views.BaseFragment
 
 class PostListFragment : BaseFragment() {

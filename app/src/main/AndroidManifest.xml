@@ -32,6 +32,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".activities.tutorial.TutorialActivity" />
         <activity
+            android:exported="true"
             android:name=".activities.splash.SplashActivity"
             android:theme="@style/DarkThemeNoActionBar">
             <intent-filter>
@@ -40,7 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.login.LoginActivity" />
     </application>
 
 </manifest>

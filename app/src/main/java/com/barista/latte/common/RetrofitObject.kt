@@ -20,4 +20,8 @@ object RetrofitObject {
     fun getAuthServerInterface() : AuthServerInterface {
         return getRetrofit().create(AuthServerInterface::class.java)
     }
+
+    fun getUserServerInterface() : UserServerInterface {
+        return getRetrofit().create(UserServerInterface::class.java)
+    }
 }

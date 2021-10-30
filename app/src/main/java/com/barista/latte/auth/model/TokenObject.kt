@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 * Created by Juhyang on 2021/10/30
 */
 
-class TokenObject (
+data class TokenObject (
         @SerializedName("accessToken")
         val accessToken : String,
         @SerializedName("refreshToken")

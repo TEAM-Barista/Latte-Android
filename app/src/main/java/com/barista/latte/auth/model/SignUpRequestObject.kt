@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 * Created by Juhyang on 2021/10/30
 */
 
-class UserRequestObject(
+class SignUpRequestObject(
         @SerializedName("nickName")
         val nickName: String,
         @SerializedName("email")

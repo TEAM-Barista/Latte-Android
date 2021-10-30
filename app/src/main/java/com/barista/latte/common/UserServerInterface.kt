@@ -1,7 +1,6 @@
 package com.barista.latte.common
 
-import com.barista.latte.auth.model.UserRequestObject
-import okhttp3.ResponseBody
+import com.barista.latte.auth.model.SignUpRequestObject
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -12,5 +11,5 @@ import retrofit2.http.POST
 
 interface UserServerInterface {
     @POST("api/users/signup")
-    suspend fun signUp(@Body userRequestObject: UserRequestObject) : Response<Void>
+    suspend fun signUp(@Body signUpRequestObject: SignUpRequestObject) : Response<Void>
 }

@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.barista.latte.auth.UserRepository
 import com.barista.latte.auth.model.LoginStatus
-import com.barista.latte.auth.model.UserRequestObject
+import com.barista.latte.auth.model.SignUpRequestObject
 import com.barista.latte.common.RetrofitObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +28,7 @@ class SignUpViewModel @Inject constructor(private val userRepository : UserRepos
     val loginStatus : LiveData<LoginStatus> get() = _loginStatus
 
     fun signUp(nickName: String, email: String, password: String) {
-        val userRequestObject = UserRequestObject(nickName, email, password)
+        val userRequestObject = SignUpRequestObject(nickName, email, password)
 
         viewModelScope.launch {
             val signUpResponse = RetrofitObject.getUserServerInterface().signUp(userRequestObject)

@@ -33,7 +33,7 @@
         <activity android:name=".activities.tutorial.TutorialActivity" />
         <activity
             android:exported="true"
-            android:name=".activities.splash.SplashActivity"
+            android:name=".splash.SplashActivity"
             android:theme="@style/DarkThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

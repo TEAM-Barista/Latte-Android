@@ -1,7 +1,8 @@
 package com.barista.latte.auth
 
+import com.barista.latte.auth.model.SignInRequestObject
 import com.barista.latte.auth.model.TokenObject
-import com.barista.latte.auth.model.UserRequestObject
+import com.barista.latte.auth.model.SignUpRequestObject
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -15,5 +16,5 @@ interface AuthServerInterface {
     suspend fun refreshToken(@Body tokenObject: TokenObject) : Response<TokenObject>
 
     @POST("api/auth/signin")
-    suspend fun signIn(@Body user : UserRequestObject) : Response<TokenObject>
+    suspend fun signIn(@Body signUp : SignInRequestObject) : Response<TokenObject>
 }

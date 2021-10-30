@@ -7,16 +7,21 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /*
 * Created by Juhyang on 2021/10/30
 */
 
 
+@Singleton
 class UserRepository @Inject constructor(@ApplicationContext val context: Context) {
 
     private object PreferencesKeys {
@@ -27,11 +32,21 @@ class UserRepository @Inject constructor(@ApplicationContext val context: Contex
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokens")
 
-    val accessTokenFlow: Flow<String> = context.dataStore.data.map { preferences ->
+    private val accessTokenFlow: Flow<String> = context.dataStore.data.map { preferences ->
         preferences[PreferencesKeys.ACCESS_TOKEN] ?: ""
     }
-    val refreshTokenFlow: Flow<String> = context.dataStore.data.map { preferences ->
+    val accessToken : String get() {
+        return runBlocking(Dispatchers.IO) {
+            accessTokenFlow.first()
+        }
+    }
+    private val refreshTokenFlow: Flow<String> = context.dataStore.data.map { preferences ->
         preferences[PreferencesKeys.REFRESH_TOKEN] ?: ""
+    }
+    val refreshToken : String get() {
+        return runBlocking(Dispatchers.IO) {
+            refreshTokenFlow.first()
+        }
     }
 
     suspend fun writeAccessTokenToDataStore(accessToken: String) {

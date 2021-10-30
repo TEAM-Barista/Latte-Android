@@ -16,15 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
 
-    val accessToken : String get() {
-        return runBlocking(Dispatchers.IO) {
-            userRepository.accessTokenFlow.first()
-        }
-    }
+    val accessToken : String get() = userRepository.accessToken
 
-    val refreshToken : String get() {
-        return runBlocking(Dispatchers.IO) {
-            userRepository.refreshTokenFlow.first()
-        }
-    }
+    val refreshToken : String get() = userRepository.refreshToken
 }

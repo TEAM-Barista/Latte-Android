@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.barista.latte.databinding.InterviewFragmentBinding
 import com.barista.latte.databinding.LogoActionbarBinding
+import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.interview.viewmodels.InterviewViewModel
 import com.barista.latte.views.BaseFragment
 
@@ -20,7 +21,13 @@ class InterviewFragment : BaseFragment() {
     private val binding get() = _binding!!
 
     companion object {
-        fun newInstance() = InterviewFragment()
+        fun newInstance() : InterviewFragment {
+            val fragment = InterviewFragment()
+            val bundle = Bundle()
+            fragment.arguments = bundle
+
+            return fragment
+        }
     }
 
     private val viewModel: InterviewViewModel by viewModels()

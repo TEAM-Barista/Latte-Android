@@ -13,6 +13,7 @@ import com.barista.latte.MainActivity
 import com.barista.latte.R
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.SearchFragmentBinding
+import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.search.viewmodels.SearchViewModel
 import com.barista.latte.views.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +23,13 @@ class SearchFragment : BaseFragment() {
     private lateinit var binding: SearchFragmentBinding
 
     companion object {
-        fun newInstance() = SearchFragment()
+        fun newInstance() : SearchFragment {
+            val fragment = SearchFragment()
+            val bundle = Bundle()
+            fragment.arguments = bundle
+
+            return fragment
+        }
     }
 
     private val viewModel: SearchViewModel by viewModels()

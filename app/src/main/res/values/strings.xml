@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">Latte</string>
 
+    <string name="sign_in">Sign In</string>
+    <string name="welcome">Welcome to Latte</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_in_kakao">Sign in with Kakao</string>
+    <string name="sign_in_naver">Sign in with Naver</string>
+    <string name="sign_in_github">Sign in with Github</string>
+    <string name="sign_in_latte">Sign in with Latte</string>
+    <string name="find_id">아이디/비밀번호 찾기</string>
+    <string name="sign_up">회원가입</string>
+    <string name="sign_up_en">Sign up</string>
+    <string name="or">or</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+
+    <string name="start">Start !</string>
+
+    <string name="nickname">Nickname *</string>
+    <string name="email_long">Email Address *</string>
+    <string name="password_sign_up">Password *</string>
+    <string name="confirm_password">Confirm Password *</string>
+    <string name="example_email">example@gmail.com</string>
+    <string name="example_password">**********</string>
+
     <string name="new_notification">새 알림</string>
     <string name="bookmark">북 마크</string>
     <string name="my_question">나의 질문</string>

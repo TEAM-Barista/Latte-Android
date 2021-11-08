@@ -32,6 +32,6 @@ class HomeViewModel : ViewModel() {
     }
 
     fun requestInterviewAction() {
-        Timber.d("#juhyang requestInterviewAction")
+        // TODO : Request Interview Action
     }
 }

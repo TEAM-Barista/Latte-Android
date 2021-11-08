@@ -24,7 +24,13 @@ class HomeFragment : BaseFragment() {
     private val postListAdapter : PostListAdapter by lazy { PostListAdapter {} }
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() : HomeFragment {
+            val fragment = HomeFragment()
+            val bundle = Bundle()
+            fragment.arguments = bundle
+
+            return fragment
+        }
     }
 
     private val viewModel: HomeViewModel by viewModels()

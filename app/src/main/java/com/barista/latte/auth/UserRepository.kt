@@ -6,6 +6,10 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.barista.latte.auth.model.LoginStatus
+import com.barista.latte.auth.model.SignInRequestObject
+import com.barista.latte.auth.model.TokenObject
+import com.barista.latte.common.RetrofitObject
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -49,13 +53,42 @@ class UserRepository @Inject constructor(@ApplicationContext val context: Contex
         }
     }
 
-    suspend fun writeAccessTokenToDataStore(accessToken: String) {
+    suspend fun signInByEmail(email : String, password : String) : LoginStatus {
+        val loginResponse = RetrofitObject.getAuthServerInterface().signIn(SignInRequestObject(email, password))
+        if (loginResponse.isSuccessful) {
+            val tokenObject: TokenObject = loginResponse.body()!!
+
+            writeAccessTokenToDataStore(tokenObject.accessToken)
+            writeRefreshTokenToDataStore(tokenObject.refreshToken)
+
+            return LoginStatus.SUCCESS
+        } else {
+            Timber.e("#juhyang error : ${loginResponse.errorBody()?.string()}")
+        }
+
+        return LoginStatus.FAIL
+    }
+
+    suspend fun refreshTokenWithServer(onRefresh : () -> Unit) {
+        val tokenResponse = RetrofitObject.getAuthServerInterface().refreshToken(TokenObject(accessToken, refreshToken))
+
+        if (tokenResponse.isSuccessful) {
+            val tokenObject: TokenObject = tokenResponse.body()!!
+
+            writeAccessTokenToDataStore(tokenObject.accessToken)
+            writeRefreshTokenToDataStore(tokenObject.refreshToken)
+
+            onRefresh()
+        }
+    }
+
+    private suspend fun writeAccessTokenToDataStore(accessToken: String) {
         context.dataStore.edit { tokens ->
             tokens[PreferencesKeys.ACCESS_TOKEN] = accessToken
         }
     }
 
-    suspend fun writeRefreshTokenToDataStore(refreshToken: String) {
+    private suspend fun writeRefreshTokenToDataStore(refreshToken: String) {
         context.dataStore.edit { tokens ->
             tokens[PreferencesKeys.REFRESH_TOKEN] = refreshToken
         }

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.barista.latte.MainActivity
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostListFragmentBinding
+import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.post.detail.view.PostDetailActivity
 import com.barista.latte.post.list.viewmodels.PostListViewModel
 import com.barista.latte.views.BaseFragment
@@ -30,7 +31,13 @@ class PostListFragment : BaseFragment() {
     } }
 
     companion object {
-        fun newInstance() = PostListFragment()
+        fun newInstance() : PostListFragment {
+            val fragment = PostListFragment()
+            val bundle = Bundle()
+            fragment.arguments = bundle
+
+            return fragment
+        }
     }
 
     private val listViewModel: PostListViewModel by viewModels()

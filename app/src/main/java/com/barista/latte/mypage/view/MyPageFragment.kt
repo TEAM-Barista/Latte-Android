@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.MyPageFragmentBinding
+import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.mypage.viewmodels.MyPageViewModel
 import com.barista.latte.views.BaseFragment
 
@@ -17,7 +18,13 @@ class MyPageFragment : BaseFragment() {
     private var _binding: MyPageFragmentBinding? = null
     private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
     companion object {
-        fun newInstance() = MyPageFragment()
+        fun newInstance() : MyPageFragment {
+            val fragment = MyPageFragment()
+            val bundle = Bundle()
+            fragment.arguments = bundle
+
+            return fragment
+        }
     }
 
     private val viewModel: MyPageViewModel by viewModels()

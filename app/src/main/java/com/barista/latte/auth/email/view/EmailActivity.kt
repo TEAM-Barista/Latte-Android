@@ -20,6 +20,8 @@ class EmailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEmailBinding.inflate(layoutInflater)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
 
         aboutView()
         setObserver()
@@ -31,10 +33,6 @@ class EmailActivity : AppCompatActivity() {
         binding.signUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
-        }
-
-        binding.start.setOnClickListener {
-            viewModel.signIn(binding.mailEditText.text.toString(), binding.passwordEditText.text.toString())
         }
     }
 

@@ -1,4 +1,4 @@
-package com.barista.latte.auth.model
+package com.barista.latte.models.auth
 
 /*
 * Created by Juhyang on 2021/10/30

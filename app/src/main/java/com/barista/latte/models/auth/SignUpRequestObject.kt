@@ -1,4 +1,4 @@
-package com.barista.latte.auth.model
+package com.barista.latte.models.auth
 
 import com.google.gson.annotations.SerializedName
 

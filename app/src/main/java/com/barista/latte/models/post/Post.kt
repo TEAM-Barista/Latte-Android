@@ -1,4 +1,4 @@
-package com.barista.latte.models
+package com.barista.latte.models.post
 
 /**
 

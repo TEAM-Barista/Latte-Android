@@ -6,16 +6,12 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.asLiveData
 import com.barista.latte.MainActivity
 import com.barista.latte.R
-import com.barista.latte.auth.UserRepository
+import com.barista.latte.models.auth.UserRepository
 import com.barista.latte.auth.signin.view.SignInActivity
 import com.barista.latte.splash.viewmodels.SplashViewModel
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint

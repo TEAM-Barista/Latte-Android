@@ -1,8 +1,7 @@
-package com.barista.latte.auth
+package com.barista.latte.models.auth
 
-import com.barista.latte.auth.model.SignInRequestObject
-import com.barista.latte.auth.model.TokenObject
-import com.barista.latte.auth.model.SignUpRequestObject
+import com.barista.latte.models.auth.SignInRequestObject
+import com.barista.latte.models.auth.TokenObject
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST

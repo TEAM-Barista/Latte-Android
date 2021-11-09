@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.barista.latte.auth.email.viewmodels.EmailViewModel
-import com.barista.latte.auth.model.LoginStatus
+import com.barista.latte.models.auth.LoginStatus
 import com.barista.latte.auth.signup.view.SignUpActivity
 import com.barista.latte.databinding.ActivityEmailBinding
 import dagger.hilt.android.AndroidEntryPoint

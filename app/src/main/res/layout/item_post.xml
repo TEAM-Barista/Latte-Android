@@ -7,7 +7,7 @@
 
         <variable
             name="post"
-            type="com.barista.latte.models.Post" />
+            type="com.barista.latte.models.post.Post" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

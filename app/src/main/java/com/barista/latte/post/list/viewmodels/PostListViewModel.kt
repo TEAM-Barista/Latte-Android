@@ -3,7 +3,7 @@ package com.barista.latte.post.list.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.barista.latte.models.Post
+import com.barista.latte.models.post.Post
 
 class PostListViewModel : ViewModel() {
 

@@ -1,12 +1,8 @@
 package com.barista.latte.splash.viewmodels
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import com.barista.latte.auth.UserRepository
+import com.barista.latte.models.auth.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 /*

@@ -1,6 +1,6 @@
 package com.barista.latte.post
 
-import com.barista.latte.models.Post
+import com.barista.latte.models.post.Post
 import javax.inject.Inject
 
 /*

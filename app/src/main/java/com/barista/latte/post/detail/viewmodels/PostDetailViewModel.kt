@@ -3,10 +3,9 @@ package com.barista.latte.post.detail.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.barista.latte.models.Post
+import com.barista.latte.models.post.Post
 import com.barista.latte.post.PostRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
 /*

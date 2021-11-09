@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.barista.latte.auth.UserRepository
-import com.barista.latte.auth.model.LoginStatus
-import com.barista.latte.auth.model.SignUpRequestObject
+import com.barista.latte.models.auth.UserRepository
+import com.barista.latte.models.auth.LoginStatus
+import com.barista.latte.models.auth.SignUpRequestObject
 import com.barista.latte.common.RetrofitObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

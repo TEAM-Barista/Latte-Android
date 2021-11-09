@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.barista.latte.databinding.ItemNewInterviewBinding
 import com.barista.latte.databinding.ItemPriorInterviewBinding
-import com.barista.latte.models.Interview
+import com.barista.latte.models.interview.Interview
 
 /*
 * Created by Juhyang on 2021/09/04

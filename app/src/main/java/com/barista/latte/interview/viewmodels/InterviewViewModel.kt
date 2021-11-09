@@ -3,9 +3,13 @@ package com.barista.latte.interview.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.barista.latte.models.Interview
+import com.barista.latte.models.interview.Interview
+import com.barista.latte.models.interview.InterviewRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class InterviewViewModel : ViewModel() {
+@HiltViewModel
+class InterviewViewModel @Inject constructor(val interviewRepository : InterviewRepository) : ViewModel() {
     private val _newInterviewList : MutableLiveData<List<Interview>> = MutableLiveData()
     val newInterviewList : LiveData<List<Interview>> get() = _newInterviewList
 
@@ -15,16 +19,11 @@ class InterviewViewModel : ViewModel() {
 
     fun loadData() {
         val newInterviewList = ArrayList<Interview>()
-        for (i in 0 until 3) {
-            newInterviewList.add(Interview(i.toLong(), "Title", "Contents"))
-        }
 
         _newInterviewList.value = newInterviewList
 
         val priorInterviewList = ArrayList<Interview>()
-        for (i in 0 until 3) {
-            priorInterviewList.add(Interview(i.toLong(),"Title", "Contents"))
-        }
+
         _priorInterviewList.value = priorInterviewList
     }
 }

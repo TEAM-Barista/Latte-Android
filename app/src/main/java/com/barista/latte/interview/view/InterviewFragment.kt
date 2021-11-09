@@ -15,7 +15,10 @@ import com.barista.latte.databinding.LogoActionbarBinding
 import com.barista.latte.home.view.HomeFragment
 import com.barista.latte.interview.viewmodels.InterviewViewModel
 import com.barista.latte.views.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class InterviewFragment : BaseFragment() {
     private var _binding: InterviewFragmentBinding? = null
     private val binding get() = _binding!!

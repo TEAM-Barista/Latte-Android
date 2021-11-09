@@ -1,4 +1,4 @@
-package com.barista.latte.auth
+package com.barista.latte.models.auth
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -6,9 +6,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.barista.latte.auth.model.LoginStatus
-import com.barista.latte.auth.model.SignInRequestObject
-import com.barista.latte.auth.model.TokenObject
 import com.barista.latte.common.RetrofitObject
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

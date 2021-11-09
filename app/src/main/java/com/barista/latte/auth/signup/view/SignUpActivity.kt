@@ -10,7 +10,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.core.content.ContextCompat
 import com.barista.latte.R
-import com.barista.latte.auth.model.LoginStatus
+import com.barista.latte.models.auth.LoginStatus
 import com.barista.latte.auth.signup.viewmodels.SignUpViewModel
 import com.barista.latte.databinding.ActivitySignUpBinding
 import com.barista.latte.databinding.CommonTextActionbarBinding

@@ -14,8 +14,9 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.barista.latte.databinding.LogoActionbarBinding
 import com.barista.latte.views.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : BaseFragment() {
 
     private var _binding: HomeFragmentBinding? = null

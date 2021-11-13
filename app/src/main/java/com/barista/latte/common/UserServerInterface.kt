@@ -1,6 +1,6 @@
 package com.barista.latte.common
 
-import com.barista.latte.models.auth.SignUpRequestBody
+import com.barista.latte.models.auth.request.SignUpRequestBody
 import retrofit2.Response
 import retrofit2.http.*
 

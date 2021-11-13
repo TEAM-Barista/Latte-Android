@@ -1,13 +1,7 @@
 package com.barista.latte.models.interview
 
-import android.content.Context
 import com.barista.latte.common.RetrofitObject
 import com.barista.latte.models.auth.UserRepository
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -16,27 +10,21 @@ import javax.inject.Singleton
 */
 
 @Singleton
-class InterviewRepository @Inject constructor(@ApplicationContext val context: Context, val userRepository: UserRepository) {
-    suspend fun getCarouselInterview() : Interview? {
-        val accessToken = userRepository.accessToken
-        val interviewResponse = RetrofitObject.getInterviewServerInterface().getInterviewCarousel(accessToken)
-        Timber.d("#juhyang interviewR : ${interviewResponse.code()}")
-        when (interviewResponse.code()) {
-            200 -> {
-                return interviewResponse.body()
-            }
-            401 -> {
-                userRepository.refreshTokenWithServer {
-                    CoroutineScope(Dispatchers.IO).launch {
-                        getCarouselInterview()
-                    }
-                }
-            }
-        }
-        return null
-    }
+class InterviewRepository @Inject constructor(private val userRepository: UserRepository) {
+    private val serverInterface = RetrofitObject.getInterviewServerInterface()
+    private val accessToken: String get() = userRepository.accessToken
 
-    fun getInterviewById() {
+    suspend fun getInterview(interviewId: Int) = serverInterface.getInterview(accessToken, interviewId)
 
-    }
+    suspend fun getCarouselInterview() = serverInterface.getInterviewCarousel(accessToken)
+
+    suspend fun setInterviewBookmark(interviewId: Int) = serverInterface.setInterviewBookmark(accessToken, interviewId)
+
+    suspend fun setInterviewLike(interviewId: Int) = serverInterface.setInterviewLike(accessToken, interviewId)
+
+    suspend fun getInterviewListRecent() = serverInterface.getInterviewListRecent(accessToken)
+
+    suspend fun getInterviewListRecommend() = serverInterface.getInterviewListRecommend(accessToken)
+
+    suspend fun requestSenior() = serverInterface.requestSenior(accessToken)
 }

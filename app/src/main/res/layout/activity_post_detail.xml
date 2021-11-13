@@ -2,6 +2,7 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.barista.latte.post.detail.viewmodels.PostDetailViewModel" />
@@ -27,11 +28,11 @@
 
                 <TextView
                     android:id="@+id/title"
-                    android:text="@{viewModel.post.title}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/jet_brains_mono_b"
+                    android:text="@{viewModel.post.postTitle}"
                     android:textColor="?attr/textColor"
                     android:textSize="20sp"
                     tools:text="I don't know anything about development. Please teach me." />
@@ -53,10 +54,10 @@
 
                     <TextView
                         android:id="@+id/writer"
-                        android:text="@{viewModel.post.writer}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:text="@{viewModel.post.userName}"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@id/avatar_image"
                         app:layout_constraintTop_toTopOf="parent"
@@ -64,10 +65,10 @@
 
                     <TextView
                         android:id="@+id/date"
-                        android:text="@{viewModel.post.getDateString()}"
                         raintTop_toBottomOf="@id/writer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@{viewModel.post.getDateString()}"
                         android:textColor="@color/grey_8b"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/writer"
@@ -104,10 +105,10 @@
 
                 <TextView
                     android:id="@+id/contents"
-                    android:text="@{viewModel.post.contents}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_kr_r"
+                    android:text="@{viewModel.post.postContent}"
                     android:textColor="?attr/textColor"
                     android:textSize="12sp"
                     tools:text="Post Contents" />

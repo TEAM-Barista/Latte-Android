@@ -6,17 +6,17 @@ package com.barista.latte.models.post
 
  */
 data class Post(
-        val bookmarkCount : Int,
-        val commentCount : Int,
-        val isBookmarked : Boolean,
-        val postContent : String,
-        val postId : Int,
-        val postTitle : String,
-        val replyCount : Int,
-        val tagsIds : List<Int>,
-        val tags : List<String>,
-        val userId : Int,
-        val userName : String
+        val bookmarkCount: Int = 0,
+        val commentCount: Int = 0,
+        val isBookmarked: Boolean = false,
+        val postContent: String = "",
+        val postId: Int = -1,
+        val postTitle: String = "",
+        val replyCount: Int = 0,
+        val tagsIds: List<Int> = listOf(),
+        val tags: List<String> = listOf(),
+        val userId: Int = 0,
+        val userName: String = ""
 ) {
     fun getBookmarkCountString(): String {
         return if (bookmarkCount > 999) {

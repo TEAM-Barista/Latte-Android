@@ -2,16 +2,16 @@ package com.barista.latte.models.post
 
 import com.barista.latte.common.RetrofitObject
 import com.barista.latte.models.auth.UserRepository
+import com.barista.latte.models.post.request.PostRequestBody
 import javax.inject.Inject
 
 /*
 * Created by Juhyang on 2021/11/10
 */
 
-class PostRepository @Inject constructor(val userRepository: UserRepository) {
+class PostRepository @Inject constructor(private val userRepository: UserRepository) {
 
     private val serverInterface = RetrofitObject.getPostServerInterface()
-
     private val accessToken: String get() = userRepository.accessToken
 
     suspend fun deletePost(postId: Int) = serverInterface.deletePost(accessToken, postId)

@@ -9,6 +9,6 @@ import javax.inject.Inject
 
 class PostRepository @Inject constructor() {
     fun getPost(postId: Long): Post {
-        return Post(postId, "Headline-1line", "Our public platform serves 100 million people every month, making it one of the 50 most ", "Minky", 1000, 1000, null)
+        return Post()
     }
 }

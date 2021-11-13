@@ -18,6 +18,8 @@ class InterviewViewModel @Inject constructor(val interviewRepository : Interview
 
 
     fun loadData() {
+        getNewInterviewList()
+        getPriorInterviewList()
         val newInterviewList = ArrayList<Interview>()
 
         _newInterviewList.value = newInterviewList
@@ -26,4 +28,7 @@ class InterviewViewModel @Inject constructor(val interviewRepository : Interview
 
         _priorInterviewList.value = priorInterviewList
     }
+
+    fun getNewInterviewList() {}
+    fun getPriorInterviewList() {}
 }

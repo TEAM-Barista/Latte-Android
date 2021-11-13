@@ -26,7 +26,7 @@ class PostListFragment : BaseFragment() {
     private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
     private val postListAdapter: PostListAdapter by lazy { PostListAdapter { post ->
         val intent = Intent (requireContext(), PostDetailActivity::class.java)
-        intent.putExtra(PostDetailActivity.POST_KEY, post.id)
+        intent.putExtra(PostDetailActivity.POST_KEY, post.postId)
         requireActivity().startActivity(intent)
     } }
 

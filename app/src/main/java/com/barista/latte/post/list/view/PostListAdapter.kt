@@ -38,7 +38,7 @@ class PostListAdapter(val onViewClick: (post: Post) -> Unit) : ListAdapter<Post,
 
     object PostDiffCallback : DiffUtil.ItemCallback<Post>() {
         override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean { // 고유 값을 비교하는것이 좋다.
-            return oldItem.id == newItem.id
+            return oldItem.postId == newItem.postId
         }
 
         override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean { // 객체가 같은지 비교하는 것이 좋다.

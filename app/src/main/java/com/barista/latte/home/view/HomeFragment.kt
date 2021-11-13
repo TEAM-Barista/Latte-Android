@@ -13,7 +13,9 @@ import com.barista.latte.home.viewmodels.HomeViewModel
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.barista.latte.databinding.LogoActionbarBinding
+import com.barista.latte.models.post.TabStatus
 import com.barista.latte.views.BaseFragment
+import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,6 +49,8 @@ class HomeFragment : BaseFragment() {
 
         initRecyclerview()
         setDataObserver()
+
+        aboutView()
 
         return binding.root
     }
@@ -86,5 +90,20 @@ class HomeFragment : BaseFragment() {
         viewModel.postList.observe(viewLifecycleOwner) { postList ->
             postListAdapter.submitList(postList)
         }
+    }
+
+    private fun aboutView() {
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab ?: return
+                if (tab.position == 0) {
+                    viewModel.setPostList(TabStatus.QUESTION)
+                } else {
+                    viewModel.setPostList(TabStatus.COMMUNITY)
+                }
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 }

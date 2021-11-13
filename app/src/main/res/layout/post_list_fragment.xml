@@ -4,6 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".post.list.view.PostListFragment">
 
+    <data>
+
+        <import type="com.barista.latte.models.post.TabStatus" />
+
+        <variable
+            name="viewModel"
+            type="com.barista.latte.post.list.viewmodels.PostListViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,12 +33,14 @@
             app:tabTextColor="@color/grey_8b">
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/question_tab_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Question"
                 tools:text="Question" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/community_tab_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Community"
@@ -53,7 +64,8 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/post_tabLayout" />
+            app:layout_constraintTop_toBottomOf="@id/post_tabLayout"
+            tools:listitem="@layout/item_post" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

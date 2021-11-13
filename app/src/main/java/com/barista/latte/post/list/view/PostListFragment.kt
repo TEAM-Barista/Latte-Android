@@ -12,11 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.barista.latte.MainActivity
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostListFragmentBinding
-import com.barista.latte.home.view.HomeFragment
+import com.barista.latte.models.post.TabStatus
 import com.barista.latte.post.detail.view.PostDetailActivity
 import com.barista.latte.post.list.viewmodels.PostListViewModel
 import com.barista.latte.views.BaseFragment
+import com.google.android.material.tabs.TabLayout
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PostListFragment : BaseFragment() {
 
     private var _binding: PostListFragmentBinding? = null // View 의
@@ -24,14 +27,16 @@ class PostListFragment : BaseFragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!! // binding 이 nullable 이기 때문에 ? 를 없애기 위한 Getter
-    private val postListAdapter: PostListAdapter by lazy { PostListAdapter { post ->
-        val intent = Intent (requireContext(), PostDetailActivity::class.java)
-        intent.putExtra(PostDetailActivity.POST_KEY, post.postId)
-        requireActivity().startActivity(intent)
-    } }
+    private val postListAdapter: PostListAdapter by lazy {
+        PostListAdapter { post ->
+            val intent = Intent(requireContext(), PostDetailActivity::class.java)
+            intent.putExtra(PostDetailActivity.POST_KEY, post.postId)
+            requireActivity().startActivity(intent)
+        }
+    }
 
     companion object {
-        fun newInstance() : PostListFragment {
+        fun newInstance(): PostListFragment {
             val fragment = PostListFragment()
             val bundle = Bundle()
             fragment.arguments = bundle
@@ -40,7 +45,7 @@ class PostListFragment : BaseFragment() {
         }
     }
 
-    private val listViewModel: PostListViewModel by viewModels()
+    private val viewModel: PostListViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +55,8 @@ class PostListFragment : BaseFragment() {
 
         initRecyclerview()
         setDataObserver()
+
+        aboutView()
 
         return binding.root
     }
@@ -84,11 +91,11 @@ class PostListFragment : BaseFragment() {
     }
 
     override fun loadData() {
-        listViewModel.loadData()
+        viewModel.loadData()
     }
 
     private fun setDataObserver() {
-        listViewModel.postList.observe(viewLifecycleOwner) { postList ->
+        viewModel.postList.observe(viewLifecycleOwner) { postList ->
             postListAdapter.submitList(postList)
         }
     }
@@ -98,5 +105,21 @@ class PostListFragment : BaseFragment() {
             adapter = postListAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
+    }
+
+    private fun aboutView() {
+        binding.postTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab ?: return
+                if (tab.position == 0) {
+                    viewModel.setPostList(TabStatus.QUESTION)
+                } else {
+                    viewModel.setPostList(TabStatus.COMMUNITY)
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 }

@@ -9,6 +9,7 @@ import com.barista.latte.models.interview.Interview
 import com.barista.latte.models.interview.InterviewRepository
 import com.barista.latte.models.post.Post
 import com.barista.latte.models.post.PostRepository
+import com.barista.latte.models.post.TabStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,21 +17,19 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(val userRepository: UserRepository, private val interviewRepository: InterviewRepository, private val postRepository: PostRepository) : ViewModel() {
 
-    enum class TabStatus { QUESTION, COMMUNITY }
-
     private val _currentWeekInterview: MutableLiveData<Interview> = MutableLiveData<Interview>()
     val currentWeekInterview: LiveData<Interview>
         get() {
             return _currentWeekInterview
         }
 
-    private val _tabStatus : MutableLiveData<TabStatus> = MutableLiveData()
+    private val _tabStatus: MutableLiveData<TabStatus> = MutableLiveData()
 
-    private val _postList : MutableLiveData<List<Post>> = MutableLiveData()
-    val postList : LiveData<List<Post>> get() = _postList
+    private val _postList: MutableLiveData<List<Post>> = MutableLiveData()
+    val postList: LiveData<List<Post>> get() = _postList
 
-    var questionList : List<Post>? = null
-    var communityPostList : List<Post>? = null
+    var questionList: List<Post>? = null
+    var communityPostList: List<Post>? = null
 
     fun loadData() {
         getCarouselInterview()
@@ -56,7 +55,7 @@ class HomeViewModel @Inject constructor(val userRepository: UserRepository, priv
         }
     }
 
-    fun setPostList(tabStatus : TabStatus) {
+    fun setPostList(tabStatus: TabStatus) {
         _tabStatus.value = tabStatus
         when (tabStatus) {
             TabStatus.QUESTION -> {

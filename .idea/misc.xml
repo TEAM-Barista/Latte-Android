@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.32708333333333334" />
         <entry key="app/src/main/res/drawable/boarder_round_square.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/drawable/circle_edge.xml" value="0.5564102564102564" />
         <entry key="app/src/main/res/drawable/gray.xml" value="0.38333333333333336" />
@@ -34,7 +35,7 @@
         <entry key="app/src/main/res/layout/my_page_fragment.xml" value="0.3695652173913043" />
         <entry key="app/src/main/res/layout/post_detail_actionbar.xml" value="0.3378623188405797" />
         <entry key="app/src/main/res/layout/post_fragment.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/post_list_fragment.xml" value="0.42980072463768115" />
+        <entry key="app/src/main/res/layout/post_list_fragment.xml" value="0.2" />
         <entry key="app/src/main/res/layout/search_fragment.xml" value="0.42980072463768115" />
         <entry key="app/src/main/res/layout/tab_item_layout.xml" value="0.16945288753799392" />
         <entry key="app/src/main/res/layout/text_actionbar.xml" value="0.2801418439716312" />

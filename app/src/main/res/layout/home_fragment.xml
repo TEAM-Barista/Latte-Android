@@ -5,7 +5,7 @@
 
     <data>
 
-        <import type="com.barista.latte.home.viewmodels.HomeViewModel.TabStatus"/>
+        <import type="com.barista.latte.models.post.TabStatus"/>
         <variable
             name="homeViewModel"
             type="com.barista.latte.home.viewmodels.HomeViewModel" />
@@ -160,7 +160,6 @@
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/question_tab_item"
-                    android:onClick="@{()->homeViewModel.setPostList(TabStatus.QUESTION)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Question"
@@ -168,7 +167,6 @@
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/community_tab_item"
-                    android:onClick="@{()->homeViewModel.setPostList(TabStatus.COMMUNITY)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Community"

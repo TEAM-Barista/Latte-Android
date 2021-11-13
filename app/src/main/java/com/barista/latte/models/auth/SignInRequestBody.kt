@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 * Created by Juhyang on 2021/10/30
 */
 
-class SignInRequestObject(
+class SignInRequestBody(
         @SerializedName("email")
         val email: String,
         @SerializedName("password")

@@ -20,7 +20,7 @@ class InterviewRepository @Inject constructor(@ApplicationContext val context: C
     suspend fun getCarouselInterview() : Interview? {
         val accessToken = userRepository.accessToken
         val interviewResponse = RetrofitObject.getInterviewServerInterface().getInterviewCarousel(accessToken)
-
+        Timber.d("#juhyang interviewR : ${interviewResponse.code()}")
         when (interviewResponse.code()) {
             200 -> {
                 return interviewResponse.body()

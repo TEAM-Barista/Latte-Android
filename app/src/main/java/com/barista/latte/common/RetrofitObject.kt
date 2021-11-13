@@ -1,7 +1,9 @@
 package com.barista.latte.common
 
 import com.barista.latte.models.auth.AuthServerInterface
+import com.barista.latte.models.category.CategoryServerInterface
 import com.barista.latte.models.interview.InterviewServerInterface
+import com.barista.latte.models.post.PostServerInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -18,15 +20,23 @@ object RetrofitObject {
                 .build()
     }
 
-    fun getAuthServerInterface() : AuthServerInterface {
+    fun getAuthServerInterface(): AuthServerInterface {
         return getRetrofit().create(AuthServerInterface::class.java)
     }
 
-    fun getUserServerInterface() : UserServerInterface {
+    fun getUserServerInterface(): UserServerInterface {
         return getRetrofit().create(UserServerInterface::class.java)
     }
 
-    fun getInterviewServerInterface() : InterviewServerInterface {
+    fun getInterviewServerInterface(): InterviewServerInterface {
         return getRetrofit().create(InterviewServerInterface::class.java)
+    }
+
+    fun getPostServerInterface(): PostServerInterface {
+        return getRetrofit().create(PostServerInterface::class.java)
+    }
+
+    fun getCategoryServerInterface(): CategoryServerInterface {
+        return getRetrofit().create(CategoryServerInterface::class.java)
     }
 }

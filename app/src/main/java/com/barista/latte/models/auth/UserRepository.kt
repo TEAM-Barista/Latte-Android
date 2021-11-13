@@ -30,7 +30,6 @@ class UserRepository @Inject constructor(@ApplicationContext val context: Contex
         val REFRESH_TOKEN = stringPreferencesKey("refresh_token")
     }
 
-
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokens")
 
     private val accessTokenFlow: Flow<String> = context.dataStore.data.map { preferences ->
@@ -51,7 +50,7 @@ class UserRepository @Inject constructor(@ApplicationContext val context: Contex
     }
 
     suspend fun signInByEmail(email : String, password : String) : LoginStatus {
-        val loginResponse = RetrofitObject.getAuthServerInterface().signIn(SignInRequestObject(email, password))
+        val loginResponse = RetrofitObject.getAuthServerInterface().signIn(SignInRequestBody(email, password))
         if (loginResponse.isSuccessful) {
             val tokenObject: TokenObject = loginResponse.body()!!
 

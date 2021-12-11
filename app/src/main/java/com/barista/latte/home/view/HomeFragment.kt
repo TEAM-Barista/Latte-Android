@@ -13,7 +13,7 @@ import com.barista.latte.home.viewmodels.HomeViewModel
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.barista.latte.databinding.LogoActionbarBinding
-import com.barista.latte.models.post.TabStatus
+import com.barista.latte.post.models.TabStatus
 import com.barista.latte.views.BaseFragment
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -97,9 +97,9 @@ class HomeFragment : BaseFragment() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab ?: return
                 if (tab.position == 0) {
-                    viewModel.setPostList(TabStatus.QUESTION)
+                    viewModel.setTabStatus(TabStatus.QUESTION)
                 } else {
-                    viewModel.setPostList(TabStatus.COMMUNITY)
+                    viewModel.setTabStatus(TabStatus.COMMUNITY)
                 }
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {}

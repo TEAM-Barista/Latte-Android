@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.barista.latte.MainActivity
 import com.barista.latte.databinding.CommonTextActionbarBinding
 import com.barista.latte.databinding.PostListFragmentBinding
-import com.barista.latte.models.post.TabStatus
+import com.barista.latte.post.models.TabStatus
 import com.barista.latte.post.detail.view.PostDetailActivity
 import com.barista.latte.post.list.viewmodels.PostListViewModel
 import com.barista.latte.views.BaseFragment
@@ -51,6 +51,8 @@ class PostListFragment : BaseFragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+
         _binding = PostListFragmentBinding.inflate(inflater, container, false)
 
         initRecyclerview()
@@ -112,9 +114,9 @@ class PostListFragment : BaseFragment() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab ?: return
                 if (tab.position == 0) {
-                    viewModel.setPostList(TabStatus.QUESTION)
+                    viewModel.setTabStatus(TabStatus.QUESTION)
                 } else {
-                    viewModel.setPostList(TabStatus.COMMUNITY)
+                    viewModel.setTabStatus(TabStatus.COMMUNITY)
                 }
             }
 

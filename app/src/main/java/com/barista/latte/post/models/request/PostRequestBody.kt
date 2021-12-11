@@ -1,4 +1,4 @@
-package com.barista.latte.models.post.request
+package com.barista.latte.post.models.request
 
 /*
 * Created by Juhyang on 2021/11/14

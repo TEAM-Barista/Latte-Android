@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "585225523800",
+    "project_id": "latte-13cbd",
+    "storage_bucket": "latte-13cbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585225523800:android:15f70fdeb3013cedc8f02d",
+        "android_client_info": {
+          "package_name": "com.barista.latte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585225523800-ht0k6rspsui5ljm8u8ji7d3ro1dgq46p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIXvqTjzW0A2FTQ2rJN88ZmMipUuFFwxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585225523800-ht0k6rspsui5ljm8u8ji7d3ro1dgq46p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

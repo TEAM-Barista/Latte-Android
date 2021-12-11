@@ -35,4 +35,6 @@
 
     <string name="new_interview">새로운 인터뷰 !</string>
     <string name="prior_interview">지난 인터뷰 살펴보기</string>
+
+    <string name="default_notification_channel_id">100</string>
 </resources>

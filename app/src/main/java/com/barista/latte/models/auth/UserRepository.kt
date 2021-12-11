@@ -72,10 +72,17 @@ class UserRepository @Inject constructor(@ApplicationContext val context: Contex
         if (tokenResponse.isSuccessful) {
             val tokenObject: TokenObject = tokenResponse.body()!!
 
+            Timber.d("#juhyang tokenResponse : ${tokenResponse.code()}")
+
             writeAccessTokenToDataStore(tokenObject.accessToken)
             writeRefreshTokenToDataStore(tokenObject.refreshToken)
 
             onRefresh()
+        } else {
+            Timber.d("#juhyang tokenResponse.code() : ${tokenResponse.code()}")
+
+            writeAccessTokenToDataStore("")
+            writeRefreshTokenToDataStore("")
         }
     }
 

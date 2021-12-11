@@ -47,8 +47,8 @@ class PostDetailActivity : BaseActivity() {
     }
 
     override fun loadData() {
-        val postId = intent.getLongExtra(POST_KEY, -1L)
-        if (postId == -1L) {
+        val postId = intent.getIntExtra(POST_KEY, -1)
+        if (postId == -1) {
             return
         }
         viewModel.loadData(postId)

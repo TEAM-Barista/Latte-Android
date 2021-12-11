@@ -1,4 +1,4 @@
-package com.barista.latte.models.post
+package com.barista.latte.post.models
 
 /**
 
@@ -8,7 +8,7 @@ package com.barista.latte.models.post
 data class Post(
         val bookmarkCount: Int = 0,
         val commentCount: Int = 0,
-        val isBookmarked: Boolean = false,
+        val isBookmarked: Int = 0,
         val postContent: String = "",
         val postId: Int = -1,
         val postTitle: String = "",

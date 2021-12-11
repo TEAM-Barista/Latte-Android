@@ -1,8 +1,9 @@
-package com.barista.latte.models.post
+package com.barista.latte.post.models
 
 import com.barista.latte.common.RetrofitObject
 import com.barista.latte.models.auth.UserRepository
-import com.barista.latte.models.post.request.PostRequestBody
+import com.barista.latte.post.models.request.PostRequestBody
+import com.barista.latte.post.models.request.ReadPostRequestBody
 import javax.inject.Inject
 
 /*
@@ -18,17 +19,25 @@ class PostRepository @Inject constructor(private val userRepository: UserReposit
 
     suspend fun deleteReply(replyId: Int) = serverInterface.deleteReply(accessToken, replyId)
 
-    suspend fun getPost(postId: Int) = serverInterface.getPost(accessToken, postId)
+    suspend fun getPost(postId: Int) = serverInterface.getPost(accessToken, ReadPostRequestBody(postId))
 
     suspend fun savePost(postRequestBody: PostRequestBody) = serverInterface.savePost(accessToken, postRequestBody)
 
     suspend fun postBookmark(postId: Int) = serverInterface.postBookmark(accessToken, postId)
 
-    suspend fun getPostList() = serverInterface.getPostList(accessToken)
+    suspend fun getPostList() : List<Post> {
+        val response = serverInterface.getPostList(accessToken)
+
+        if (response.isSuccessful) {
+            val responseBody = response.body() ?: return listOf()
+
+            return responseBody.content
+        } else {
+            return listOf()
+        }
+    }
 
     suspend fun getPostListPopular() = serverInterface.getPostListPopular(accessToken)
-
-    suspend fun getPostListRecent() = serverInterface.getPostListRecent(accessToken)
 
     suspend fun postQna(postRequestBody: PostRequestBody) = serverInterface.postQna(accessToken, postRequestBody)
 

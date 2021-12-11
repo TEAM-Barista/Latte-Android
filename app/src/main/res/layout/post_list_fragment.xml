@@ -6,7 +6,7 @@
 
     <data>
 
-        <import type="com.barista.latte.models.post.TabStatus" />
+        <import type="com.barista.latte.post.models.TabStatus" />
 
         <variable
             name="viewModel"

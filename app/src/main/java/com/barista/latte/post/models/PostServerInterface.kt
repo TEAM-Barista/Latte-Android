@@ -1,6 +1,8 @@
-package com.barista.latte.models.post
+package com.barista.latte.post.models
 
-import com.barista.latte.models.post.request.PostRequestBody
+import com.barista.latte.common.Pageable
+import com.barista.latte.post.models.request.PostRequestBody
+import com.barista.latte.post.models.request.ReadPostRequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -17,8 +19,8 @@ interface PostServerInterface {
     @POST("api/v1/deleteReply")
     suspend fun deleteReply(@Header("X-AUTH-TOKEN") accessToken: String, @Field("replyId") replyId: Int): Response<Void>
 
-    @GET("api/v1/post")
-    suspend fun getPost(@Header("X-AUTH-TOKEN") accessToken: String, @Query("postId") postId: Int): Response<Post>
+    @GET("api/v1/post/readPost")
+    suspend fun getPost(@Header("X-AUTH-TOKEN") accessToken: String, @Body readPostRequestBody : ReadPostRequestBody): Response<Post>
 
     @POST("api/v1/post")
     suspend fun savePost(@Header("X-AUTH-TOKEN") accessToken: String, @Body postRequestBody: PostRequestBody): Response<Void>
@@ -27,14 +29,11 @@ interface PostServerInterface {
     @POST("api/v1/postBookmark")
     suspend fun postBookmark(@Header("X-AUTH-TOKEN") accessToken: String, @Field("postId") postId: Int): Response<Void>
 
-    @GET("api/v1/postList")
-    suspend fun getPostList(@Header("X-AUTH-TOKEN") accessToken: String): Response<List<Post>>
+    @GET("api/v1/post/postList")
+    suspend fun getPostList(@Header("X-AUTH-TOKEN") accessToken: String): Response<Pageable<List<Post>>>
 
     @GET("api/v1/postListPopular")
     suspend fun getPostListPopular(@Header("X-AUTH-TOKEN") accessToken: String): Response<List<Post>>
-
-    @GET("api/v1/postListRecent")
-    suspend fun getPostListRecent(@Header("X-AUTH-TOKEN") accessToken: String): Response<List<Post>>
 
     @POST("api/v1/qna")
     suspend fun postQna(@Header("X-AUTH-TOKEN") accessToken: String, @Body postRequestBody: PostRequestBody): Response<Void>
